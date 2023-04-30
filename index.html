@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NOCLUE_x86</title>
+        <link rel="shortcut icon" type="image/png" href="https://noclue.ktg5.online/img/favicon.png">
+        <script src="https://kit.fontawesome.com/8ab11290f8.js" crossorigin="anonymous"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=.9, autocorrect=off">
+        <link rel="stylesheet" type="text/css" href="style/main.css">
+        <link rel="stylesheet" type="text/css" href="style/fab.css">
+        <style type="text/css">
+            #spacer {
+                font-size: 3px;
+            }
+        </style>
+        <meta property="og:title" content="NOCLUE_x86">
+        <meta property="og:description" content="The group.">
+        <meta property="og:image" content="https://noclue.ktg5.online/img/logo.png">
+        <meta content="#4975FF" data-react-helmet="true" name="theme-color">
+    </head>
+
+    <body>
+        <div id="enable-js">
+            javascript is not enabled, links will not appear.
+            <script>document.getElementById('enable-js').style = "display: none;"</script>
+        </div>
+        <div id="container">
+            <div id="top-follow">
+                <div id="link_container">
+                    <nav id="links">
+
+                        <a href="https://twitch.tv/noclue_x86" id="link-button" target="_blank">
+                            <i class="fab fa-twitch" aria-hidden="true"></i>
+                        </a>
+
+                    </nav>
+                </div>
+            </div>
+
+            <div id="blocker"></div>
+
+            <div id="text">
+                <div id="part-1">
+                    <img id="logo" src="https://noclue.ktg5.online/img/logo.png" alt="No angels." height="100px">
+
+                    <div id="half-banner" class="font2">
+                        <a href="#part-2">View more information below.</a>
+                    </div>
+                </div>
+
+                
+                <div id="part-2">
+
+                    <div id="boxes">
+                        <div id="about-box" class="box">
+                            <div id="block-header" class="font-classical">About.</div>
+
+                            <div id="block-text">
+
+                                Hello, This is NOCLUE_x86. A group made by ktg5 and his friends
+                                to bring you the most stupidest moments on Twitch.
+                                <div id="spacer">
+                                    <br>
+                                    <br>
+                                </div>
+                                Everything in the group is listed on our Twitch and below.
+
+                            </div>
+                        </div>
+
+                        <div id="links-box" class="box">
+                            <div id="block-header" class="font-classical">Links.</div>
+
+                            <div id="block-text">
+                                <nav id="links">
+
+                                    <a href="https://twitch.tv/noclue_x86" id="link-button">
+                                        <i class="fab fa-twitch" aria-hidden="true"></i>
+                                    </a>
+
+                                </nav>
+                            </div>
+                        </div>
+
+                        <div id="greetz-box" class="box">
+                            <div id="block-header" class="font-classical">The Team.</div>
+
+                            <div id="block-text">
+
+                                <li><a href="https://ktg5.online" target="_blank">ktg5</a></li>
+                                <div id="spacer">
+                                    <br>
+                                    <br>
+                                </div>
+                                <li><a href="https://youtube.com/@shobuh" target="_blank">shobe</a></li>
+                                <div id="spacer">
+                                    <br>
+                                    <br>
+                                </div>
+                                <li><a href="https://twitch.tv/skppy_" target="_blank">Skippy</a></li>
+                                <div id="spacer">
+                                    <br>
+                                    <br>
+                                </div>
+                                <li><a href="https://twitch.tv/malatype" target="_blank">Malatype</a></li>
+
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+            <div id="blocker"></div>
+
+            <div id="below" class="font2">
+                &copy ktg5 2023
+                <script>
+                    var x = `&copy ktg5 2023 | ${document.lastModified}.`;
+                    document.getElementById("below").innerHTML = x;
+                </script>
+            </div>
+
+            <script>
+                // Check to see if there is a element in href
+                if (document.location.href.includes("#")) {
+                    console.log(`Is href linking to element? '${document.location.href.includes("#")}'`)
+
+                    document.getElementById(document.location.href.split("#")[1]).className += " selected"
+                }
+            </script>
+        </div>
+    </body>
+</html>
