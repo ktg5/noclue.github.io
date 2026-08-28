@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>noclue collective</title>
+        <link rel="shortcut icon" type="image/png" href="/img/icon-200x.png">
+        <meta name="viewport" content="width=device-width, initial-scale=.8, autocorrect=off">
+        <meta name="description" content="Home for everything ktg5.">
+        <meta property="og:title" content="Ktg5's website.">
+        <meta property="og:description" content="Home for everything ktg5.">
+        <meta property="og:image" content="/img/logo-800x.png">
+        <meta content="#4975FF" data-react-helmet="true" name="theme-color">
+        <meta charset="UTF-8">
+
+
+      <script type="module" crossorigin src="/src/index.js"></script>
+      <link rel="stylesheet" crossorigin href="/style/index.css">
+    </head>
+
+
+    <body>
+        <div id="nav" class="rm-bg">
+    <div class="nav-bg img">
+        <img src="/assets/navbar-bg.webp">
+    </div>
+
+    <div class="nav-group" align="left">
+        <a class="nav-btn" href="/" btn-action="main">
+            <div class="content">
+                <div class="img">
+                    <img src="/img/logo-800x.png" alt="noclue">
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <div class="nav-group" align="right">
+        <a class="nav-btn" href="https://www.twitch.tv/noclue_collective" btn-action="link">
+            <div class="content">
+                <div class="img">
+                    <img src="img/btn/twitch.png">
+                </div>
+                <span class="text">twitch</span>
+            </div>
+        </a>
+        <a class="nav-btn" href="https://www.youtube.com/@noclue_collective" btn-action="link">
+            <div class="content">
+                <div class="img">
+                    <img src="img/btn/yt.png">
+                </div>
+                <span class="text">youtube</span>
+            </div>
+        </a>
+    </div>
+</div>
+
+        <div id="container">
+            <div id="about_page" class="page">
+                <div class="flex">
+                    <div class="l">
+                        <div class="title">noclue collective</div>
+                        <div class="desc">
+                            internet collective that makes internet entertainment.
+                            <br>
+                            ran & created by ktg5 & friends
+                        </div>
+                    </div>
+                    <div class="r">
+                        <div class="title">le friends in question...</div>
+                        <div id="persons"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="media_page" class="page">
+                <div class="container">
+                    <div class="title">media</div>
+                    <div class="grid" grid-type="vods">
+                        <div class="desc">stream vods</div>
+                        <div class="content-container">
+                            <div class="btns">
+                                <div class="btn-container">
+                                    <div class="btn" btn-action="content-prev"></div>
+                                </div>
+                                <div class="btn-container">
+                                    <div class="btn" btn-action="content-next"></div>
+                                </div>
+                            </div>
+                            <div class="content"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
