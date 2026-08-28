@@ -1,0 +1,361 @@
+@use "./base/index.scss" as *;
+
+
+:root {
+    --img-hover-effect: saturate(0) contrast(2) invert(100%);
+    --content-peek: #{gPxs(content-peek)};
+}
+
+
+* {
+    scrollbar-color: rgb(255 255 255 / 20%) rgb(0 0 0 / 20%);
+    -webkit-user-select: none;
+}
+
+body {
+    background: gColor(baseBg);
+    color: #eee;
+    margin: 0;
+    font-family: gFont('normal') !important;
+}
+
+.img {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+
+    img {
+        margin: auto;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+
+@mixin cool-hover-grad ($base: transparent) {
+    background: linear-gradient(
+        gPxs(gradientDeg),
+
+        $base,
+        $base,
+
+        #fff,
+        #ddd
+    );
+    background-size: 600% !important;
+    background-position: 0% !important;
+    transition: background-position gTransMs();
+
+    &:hover,
+    &:focus-visible
+    {
+        color: #000 !important;
+        background-position: 100% !important;
+    }
+}
+
+
+#nav {
+    display: flex;
+    position: fixed;
+    color: #fff;
+    width: 100%;
+    height: gPxs(navHeight);
+    overflow: hidden;
+
+    .nav-bg {
+        position: absolute;
+        width: 100%;
+        user-select: none;
+
+        &:before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        img {
+            position: absolute;
+            inset: unset;
+            bottom: 0;
+        }
+    }
+
+    &.rm-bg .nav-bg {
+        display: none;
+    }
+
+    .nav-group {
+        display: flex;
+        margin: 0 1em;
+        gap: .5em;
+        align-items: center;
+
+        .nav-btn {
+            @include cool-hover-grad();
+            display: flex;
+            border-radius: .5em;
+            height: 75%;
+            color: #fff;
+            text-decoration: none;
+
+            .content {
+                display: flex;
+                margin: auto;
+                gap: .5em;
+                width: 80%;
+            }
+
+            &:hover,
+            &:focus-visible
+            {
+                .content {
+                    .img img {
+                        filter: brightness(0%);
+                    }
+                }
+            }
+
+            &[btn-action="main"] {
+                width: 8em;
+
+                .content {
+                    .img img {
+                        margin-bottom: 7%;
+                        width: 90%;
+                    }
+                }
+            }
+        }
+
+        &[align="right"] {
+            margin-left: auto;
+        }
+    }
+}
+
+
+#container {
+    .page {
+        height: 100vh;
+    }
+
+    #about_page {
+        background: url(../img/navbar-bg.webp);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        height: 90vh;
+
+        .flex {
+            display: flex;
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            gap: max(42px, 2vw);
+            padding: 0 3em;
+            width: fit-content;
+            height: fit-content;
+            align-items: center;
+
+            .l {
+                width: 45vw;
+                max-width: 850px;
+
+                .title {
+                    font-family: gFont(logo) !important;
+                    font-size: 3em;
+                    line-height: 1em;
+                    overflow-wrap: break-word;
+                }
+
+                .desc {
+                    font-size: 1.5em;
+                }
+            }
+
+            .r {
+                flex-shrink: 0;
+
+                .title {
+                    margin-bottom: .25em;
+                    font-family: gFont(logo) !important;
+                    font-size: 1.5em;
+                }
+
+                #persons {
+                    display: flex;
+                    flex-direction: column;
+
+                    .person {
+                        @include cool-hover-grad(#ffffff20);
+                        position: relative;
+                        color: #fff;
+                        display: flex;
+                        gap: 1em;
+                        padding: .25em;
+                        width: 25em;
+                        min-width: 350px;
+                        align-items: center;
+                        text-decoration: none;
+
+                        .img {
+                            width: 4.5em;
+                            flex-shrink: 0;
+                        }
+
+                        .info {
+                            height: fit-content;
+
+                            .name {
+                                font-size: 1.5em;
+                                line-height: 1em;
+                                font-weight: bold;
+                            }
+                        }
+
+                        &.ttv-live:before {
+                            content: '';
+                            display: block;
+                            position: absolute;
+                            inset: 0;
+                            width: 100%;
+                            height: 100%;
+                            user-select: none;
+                            box-shadow: inset 0 0 4px 2px rgb(205, 0, 0);
+                        }
+
+                        &:hover,
+                        &:focus-visible
+                        {
+                            background: #ddd;
+                            color: #000 !important;
+
+                            .pfp {
+                                filter: var(--img-hover-effect);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    #media_page {
+        margin-top: 2em;
+        
+        .container {
+            margin: auto;
+            width: gPxs(mediaWidth);
+
+            .title {
+                margin-bottom: .5em;
+                font-family: gFont(logo) !important;
+                font-size: 2em;
+                line-height: 1em;
+            }
+
+            .grid {
+                .desc {
+                    margin-bottom: .5em;
+                    font-family: gFont(logo) !important;
+                    font-size: 1.5em;
+                    line-height: 1em;
+                }
+
+                .content-container {
+                    position: relative;
+                    margin: auto;
+                    width: 100%;
+
+                    .btns {
+                        position: absolute;
+                    }
+
+
+                    @mixin content-peeks {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        width: var(--content-peek);
+                        height: 100%;
+                        user-select: none;
+                        pointer-events: none;
+                    }
+
+                    &:before {
+                        @include content-peeks;
+                        background: linear-gradient(-90deg, transparent, gColor(baseBg));
+                        left: 0;
+                    }
+
+                    &:after {
+                        @include content-peeks;
+                        background: linear-gradient(90deg, transparent, gColor(baseBg));
+                        right: 0;
+                    }
+
+
+                    .content {
+                        display: flex;
+                        padding: 0 var(--content-peek);
+                        padding-bottom: 12px;
+                        overflow-x: auto;
+                        white-space: nowrap;
+
+                        .item {
+                            @include cool-hover-grad();
+                            color: #fff;
+                            flex-shrink: 0;
+                            padding: gPxs(content-item-padding);
+                            width: gPxs(content-item-size);
+                            height: fit-content;
+                            text-decoration: none;
+
+                            &:hover {
+                                .img img {
+                                    filter: var(--img-hover-effect);
+                                }
+                            }
+
+                            .img {
+                                background: #444;
+                                margin-bottom: 6px;
+                                aspect-ratio: 16/9;
+                            }
+
+                            .info {
+                                .name {
+                                    white-space: nowrap;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                }
+
+                                .data {
+                                    .date {
+
+                                    }
+
+                                    .spacer {
+
+                                    }
+
+                                    .views {
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

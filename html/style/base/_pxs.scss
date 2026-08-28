@@ -1,0 +1,23 @@
+@use "sass:map";
+
+
+// map
+$pxs: (
+    gradientDeg: 30deg,
+
+    navHeight: 4em,
+
+    mediaWidth: 1200px,
+    content-peek: 52px,
+    content-item-padding: 6px,
+    content-item-size: 200px,
+);
+
+// get pxs from the pxs var
+@function gPxs($key) {
+    // make sure the pxs var has the key the stylesheet requested
+    @if map.has-key($pxs, $key) {
+        @return map.get($pxs, $key);
+    }
+    @error "Unknown color `#{$key}`. Available colors: #{map.keys($pxs)}";
+}

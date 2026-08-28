@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>noclue collective</title>
+        <link rel="shortcut icon" type="image/png" href="/img/icon-200x.png">
+        <meta name="viewport" content="width=device-width, initial-scale=.8, autocorrect=off">
+        <meta name="description" content="Home for everything ktg5.">
+        <meta property="og:title" content="Ktg5's website.">
+        <meta property="og:description" content="Home for everything ktg5.">
+        <meta property="og:image" content="/img/logo-800x.png">
+        <meta content="#4975FF" data-react-helmet="true" name="theme-color">
+        <meta charset="UTF-8">
+
+        <link rel="stylesheet" href="style/base.scss">
+
+        <script type="module" src="src/main.ts"></script>
+    </head>
+
+
+    <body>
+        <*-- nav --*>
+
+        <div id="container">
+            <div id="about_page" class="page">
+                <div class="flex">
+                    <div class="l">
+                        <div class="title">noclue collective</div>
+                        <div class="desc">
+                            internet collective that makes internet entertainment.
+                            <br>
+                            ran & created by ktg5 & friends
+                        </div>
+                    </div>
+                    <div class="r">
+                        <div class="title">le friends in question...</div>
+                        <div id="persons"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="media_page" class="page">
+                <div class="container">
+                    <div class="title">media</div>
+                    <div class="grid" grid-type="vods">
+                        <div class="desc">stream vods</div>
+                        <div class="content-container">
+                            <div class="btns">
+                                <div class="btn-container">
+                                    <div class="btn" btn-action="content-prev"></div>
+                                </div>
+                                <div class="btn-container">
+                                    <div class="btn" btn-action="content-next"></div>
+                                </div>
+                            </div>
+                            <div class="content"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

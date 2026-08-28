@@ -1,2 +1,2 @@
 # noclue.github.io
-NOCLUE_x86's website xd
+my lil' internet group's website for the funny

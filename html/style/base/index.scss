@@ -1,0 +1,10 @@
+@forward "colors";
+@forward "font";
+@forward "pxs";
+@forward "sizing";
+@forward "z";
+
+
+@function gTransMs() {
+    @return 250ms;
+}

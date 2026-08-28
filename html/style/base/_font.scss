@@ -1,0 +1,32 @@
+@use "sass:map";
+
+
+@font-face {
+    font-family: "Logo";
+    src: url("../font/Heading-Pro-Wide-ExtraBold-trial.ttf") format("truetype");
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Normal";
+    src: url("../font/Outfit-VariableFont_wght.ttf") format("truetype");
+    font-style: normal;
+    font-display: swap;
+}
+
+
+// fonts var
+$fonts: (
+    logo: "Logo",
+    normal: "Normal",
+);
+
+// get font from the fonts var
+@function gFont($key) {
+    // make sure the fonts var has the key the stylesheet requested
+    @if map.has-key($fonts, $key) {
+        @return map.get($fonts, $key);
+    }
+    @error "Unknown color `#{$key}`. Available fonts: #{map.keys($fonts)}";
+}

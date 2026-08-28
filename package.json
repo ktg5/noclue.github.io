@@ -1,0 +1,21 @@
+{
+  "name": "noclue.ktg5.online",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "tsc && vite build",
+    "rmStage": "bun rmStaging",
+    "dev": "vite"
+  },
+  "devDependencies": {
+    "@types/howler": "^2.2.12",
+    "@types/node": "^25.9.3",
+    "howler": "^2.2.4",
+    "sass-embedded": "^1.97.2",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2",
+    "vite": "^8.0.3",
+    "linkedom": "^0.18.13"
+  }
+}

@@ -1,0 +1,22 @@
+#nav {
+    z-index: 10;
+
+    .nav-bg {
+        z-index: -1;
+    }
+}
+
+
+#media_page {
+    .container {
+        .grid {
+            .content-container {
+                &:before,
+                &:after
+                {
+                    z-index: 1;
+                }
+            }
+        }
+    }
+}

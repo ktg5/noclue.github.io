@@ -1,0 +1,50 @@
+@media (max-width: 1200px) {
+    #container {
+        #about_page {
+            .flex {
+                flex-direction: column !important;
+
+                .l {
+                    width: 850px !important;
+                    max-width: none !important;
+                }
+
+                .r {
+                    .title {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    #container {
+        #about_page {
+            .flex {
+                .l {
+                    width: 650px !important;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    body {
+        font-size: 14px;
+    }
+
+    #container {
+        #about_page {
+            .flex {
+                padding: 0 2em;
+
+                .l {
+                    width: auto !important;
+                }
+            }
+        }
+    }
+}
