@@ -84,12 +84,6 @@ export async function buildStaging():Promise<void> {
                 return;
 
 
-                // nav
-                case "nav":
-                    resolve(fs.readFileSync(`./${config.stagingHtmlDir}/defs/nav.html`, { encoding: 'utf-8' }));
-                return;
-
-
                 // default error message
                 default:
                 resolve(`<kbd>buildStaging.ts:replaceMatches :: unknown match: ${match}</kbd>`);
@@ -153,7 +147,6 @@ export async function buildStaging():Promise<void> {
 
             // replace the html within the staging folder
             console.log('🔃 changing html stuff...');
-            await replaceHtml(path.resolve(__dirname, config.stagingHtmlDir, 'defs'));
             await replaceHtml(path.resolve(__dirname, config.stagingHtmlDir));
             console.log('✅ replaced html lines!');
 
