@@ -1,0 +1,1 @@
+var e=`/assets/missioninfo.mp3`;export{e as default};

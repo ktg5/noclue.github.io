@@ -1,0 +1,1 @@
+var e=`/assets/sidemenu.mp3`;export{e as default};

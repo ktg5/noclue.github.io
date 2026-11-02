@@ -3,7 +3,7 @@
     <head>
         <title>noclue collective</title>
         <link rel="shortcut icon" type="image/png" href="/img/icon-200x.png">
-        <meta name="viewport" content="width=device-width, initial-scale=.8, autocorrect=off">
+        <meta name="viewport" content="width=device-width, initial-scale=.8">
         <meta name="description" content="Home for everything ktg5.">
         <meta property="og:title" content="Ktg5's website.">
         <meta property="og:description" content="Home for everything ktg5.">
@@ -18,74 +18,131 @@
 
 
     <body>
-        <div id="nav" class="rm-bg">
-    <div class="nav-bg img">
-        <img src="/assets/navbar-bg.webp">
-    </div>
+        <div id="progress">
+            <video class="preload" src="/assets/logo-progress.mov#t=0" preload="metadata"></video>
+            <video class="finish" src="/assets/logo-progress-end.mov#t=0" preload="metadata"></video>
+            <span class="status">please wait...</span>
+        </div>
 
-    <div class="nav-group" align="left">
-        <a class="nav-btn" href="/" btn-action="main">
-            <div class="content">
-                <div class="img">
-                    <img src="/img/logo-800x.png" alt="noclue">
+        <div id="side">
+            <div class="shadow"></div>
+            <div class="side-container">
+                <div class="side-content">
+                    <div class="title">
+                        <span class="title-part">
+                            <span class="title-text">noclue</span>
+                        </span>
+                        <span class="title-part">
+                            <span class="title-text">collective</span>
+                        </span>
+                    </div>
+                    <div class="list-container">
+                        <div class="list"></div>
+                        <div class="scrollbar">
+                            <div class="scrubber"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </a>
-    </div>
-
-    <div class="nav-group" align="right">
-        <a class="nav-btn" href="https://www.twitch.tv/noclue_collective" btn-action="link">
-            <div class="content">
-                <div class="img">
-                    <img src="img/btn/twitch.png">
-                </div>
-                <span class="text">twitch</span>
-            </div>
-        </a>
-        <a class="nav-btn" href="https://www.youtube.com/@noclue_collective" btn-action="link">
-            <div class="content">
-                <div class="img">
-                    <img src="img/btn/yt.png">
-                </div>
-                <span class="text">youtube</span>
-            </div>
-        </a>
-    </div>
-</div>
+        </div>
 
         <div id="container">
-            <div id="about_page" class="page">
-                <div class="flex">
-                    <div class="l">
+            <div class="page" data-page="main" map-selector="viewport" selected>
+                <div map-selector="map">
+                    <img class="map-img" src="/img/map.png">
+                    <img class="map-img extra hover-highlight" src="/img/map.png">
+                    <!-- points -->
+                    <div class="point-custom" point-data="welcome">
                         <div class="title">noclue collective</div>
                         <div class="desc">
                             internet collective that makes internet entertainment.
                             <br>
-                            ran & created by ktg5 & friends
+                            ran and created by ktg5 & friends
                         </div>
-                    </div>
-                    <div class="r">
-                        <div class="title">le friends in question...</div>
-                        <div id="persons"></div>
                     </div>
                 </div>
             </div>
 
-            <div id="media_page" class="page">
-                <div class="container">
-                    <div class="title">media</div>
-                    <div class="grid" grid-type="vods">
-                        <div class="desc">stream vods</div>
-                        <div class="content-container">
-                            <div class="btns">
-                                <div class="btn-container">
-                                    <div class="btn" btn-action="content-prev"></div>
-                                </div>
-                                <div class="btn-container">
-                                    <div class="btn" btn-action="content-next"></div>
+            <div class="page" data-page="vods">
+                <div class="info_page-container">
+                    <div class="info_page-banner">
+                        <div class="banner-part" part="0"></div>
+                        <div class="banner-part" part="1"></div>
+                    </div>
+                    <div class="info_page">
+                        <div class="info_page-content">
+                            <div class="info_page-title">
+                                <div class="main">VODS</div>
+                                <div class="desc">twitch stream archives (both from yt & twitch)</div>
+                                <div class="count">
+                                    <span value></span>
+                                    <span class="txt">ITEMS</span>
                                 </div>
                             </div>
-                            <div class="content"></div>
+                            <div class="info_page-list-container">
+                                <div class="info_page-list"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page" data-page="vids">
+                <div class="info_page-container">
+                    <div class="info_page-banner">
+                        <div class="banner-part" part="0"></div>
+                        <div class="banner-part" part="1"></div>
+                    </div>
+                    <div class="info_page">
+                        <div class="info_page-content">
+                            <div class="info_page-title">
+                                <div class="main">VIDS</div>
+                                <div class="desc">videos published on the youtube channel</div>
+                                <div class="count">
+                                    <span value></span>
+                                    <span class="txt">ITEMS</span>
+                                </div>
+                            </div>
+                            <div class="info_page-list-container">
+                                <div class="info_page-list"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page" data-page="settings">
+                <h2>settings</h2>
+            </div>
+        </div>
+
+        <div id="nav">
+            <div class="nav-content">
+                <div class="btn-container">
+                    <div class="btn" tabindex="0" btn-action="page" data-page="main" selected>
+                        <div class="content">
+                            <div class="img"><img src="/img/malatype.png"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-container">
+                    <div class="btn" tabindex="0" btn-action="ppl">
+                        <div class="content">
+                            <div class="img"><img src="/img/malatype.png"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-container">
+                    <div class="btn" tabindex="0" btn-action="page" data-page="vods">
+                        <div class="content">
+                            <div class="img"><img src="/img/malatype.png"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-container">
+                    <div class="btn" tabindex="0" btn-action="page" data-page="vids">
+                        <div class="content">
+                            <div class="img"><img src="/img/malatype.png"></div>
                         </div>
                     </div>
                 </div>

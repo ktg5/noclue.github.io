@@ -1,0 +1,1 @@
+var e=`/assets/select-pointer.mp3`;export{e as default};
