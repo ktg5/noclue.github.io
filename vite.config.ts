@@ -97,5 +97,16 @@ export default defineConfig({
                 },
             },
         }
-    }
+    },
+
+    plugins: [
+        {
+            name: 'browser-log',
+            configureServer(server) {
+                server.ws.on('client-log', (data) => {
+                    console.log('[browser]:', data)
+                })
+            }
+        }
+    ]
 });

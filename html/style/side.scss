@@ -1,0 +1,227 @@
+@use "./base/index.scss" as *;
+
+
+#side {
+    position: absolute;
+    width: 100vw;
+    height: calc(100dvh - gPxs(nav-height));
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+    pointer-events: none;
+
+    &[active] {
+        user-select: initial;
+        -webkit-user-select: initial;
+        pointer-events: all;
+
+        .shadow {
+            opacity: 1;
+        }
+
+        .side-container {
+            right: 0;
+
+            .side-content {
+                .list-container {
+                    .list {
+                        .list-item {
+                            .list-item-content {
+                                .text {
+                                    .desc {
+                                        &[scroll] {
+                                            .desc-content {
+                                                animation: txt-scroll var(--scroll-ms) linear infinite;
+                                                animation-delay: 1s;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .shadow {
+        content: '';
+        background: rgba(0 0 0 / .5);
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity gTransMs();
+    }
+
+    .side-container {
+        background: linear-gradient(45deg, gColor(side-bg-1), gColor(side-bg-2));
+        position: absolute;
+        right: calc(gPxs(side-width) * -1);
+        width: gPxs(side-width);
+        height: 100%;
+        transition: right 250ms;
+
+        .side-content {
+            position: relative;
+            margin: 2em 1em;
+            height: 100%;
+
+            .title {
+                color: gColor(textColor);
+                display: flex;
+                margin-top: 1.5em;
+                gap: .35em;
+                font-size: 2.5em;
+                font-weight: bold;
+                text-transform: uppercase;
+
+                span {
+                    display: block;
+                }
+
+                .title-part {
+                    --content-width: 100%;
+
+                    position: relative;
+                    margin-left: .05em;
+                    width: calc(var(--content-width) - .25em);
+                    transform: skewX(calc(gPxs(skew) * -1));
+                    overflow: hidden;
+
+                    .title-text {
+                        position: relative;
+                        display: block;
+                        left: 50%;
+                        width: fit-content;
+                        transform: skewX(25deg) translateX(-50%);
+                    }
+                }
+            }
+
+            .list-container {
+                display: flex;
+                position: relative;
+                height: 85%;
+
+                .list {
+                    background: rgba(0 0 0 / .5);
+                    box-shadow:
+                        inset 0 0 1em .75em #000,
+                        0 0 .25em #777;
+                    display: flex;
+                    flex-direction: column;
+                    gap: .5em;
+                    padding-top: 2em;
+                    width: 78%;
+
+                    .list-item {
+                        color: #ddd;
+                        position: relative;
+                        margin: 0 .5em;
+                        text-decoration-line: none;
+
+                        &:hover,
+                        &:focus-visible
+                        {
+                            color: #000;
+
+                            .list-item-content {
+                                background: linear-gradient(
+                                    180deg,
+                                    #eee 0%,
+                                    #eee 47%,
+                                    #ddd 53%,
+                                    #ccc 100%
+                                );
+
+                                .shadow {
+                                    background: linear-gradient(
+                                        180deg,
+                                        #ddd 0%,
+                                        #ddd 47%,
+                                        #ccc 53%,
+                                        #bbb 100%
+                                    );
+                                }
+                            }
+                        }
+
+                        .list-item-content {
+                            background: linear-gradient(
+                                180deg,
+                                gColor(btn2-bg-1) 0%,
+                                gColor(btn2-bg-1) 47%,
+                                gColor(btn2-bg-2) 53%,
+                                gColor(btn2-bg-2) 100%
+                            );
+                            display: flex;
+                            position: inherit;
+                            padding: 1%;
+                            align-items: center;
+
+                            .shadow {
+                                content: "";
+                                background: rgba(0, 0, 5, 0.5);
+                                position: absolute;
+                                inset: 0;
+                                margin: auto;
+                                width: 99%;
+                                height: 95%;
+                                opacity: 1;
+                                transition: none;
+                            }
+
+                            .pfp {
+                                width: gPxs(side-item-pfp);
+                                flex-shrink: 0;
+                            }
+
+                            .text {
+                                margin-left: gPxs(side-item-text-margin);
+                                width: calc(100% - (#{gPxs(side-item-text-margin)} + #{gPxs(side-item-pfp)}));
+                                margin-bottom: .2em;
+                                
+                                .desc {
+                                    color: gColor(textColor-alt);
+                                    display: flex;
+                                    position: relative;
+                                    height: 1em;
+                                    overflow: hidden;
+
+                                    &[scroll] {
+                                        .desc-content {
+                                            justify-content: space-around;
+                                        }
+
+                                        .desc-content-2 {
+                                            display: flex;
+                                        }
+                                    }
+
+                                    .desc-content {
+                                        display: flex;
+                                        flex-shrink: 0;
+                                        position: relative;
+                                        top: -20%;
+                                        padding-right: 2em;
+                                        white-space: nowrap;
+                                        font-style: italic;
+                                    }
+
+                                    .desc-content-2 {
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

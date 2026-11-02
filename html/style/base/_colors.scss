@@ -3,7 +3,25 @@
 
 // map
 $colors: (
-    baseBg: #111
+    baseBg: #111,
+    textColor: #cf0205,
+    textColor-alt: #980308,
+
+    btn-hover-bg-1: #410000,
+    btn-hover-bg-2: #910000,
+    btn-hover-bg-3: #da0105,
+    btn2-bg-1: #2d2d2d,
+    btn2-bg-2: #202020,
+
+    side-bg-1: #2b363f,
+    side-bg-2: #06080a,
+
+    map-pointer-bg-1: #aaa,
+    map-pointer-bg-2: #ddd,
+    map-pointer-bg-3: #fff,
+    map-pointer-shadow-1: #fff,
+    map-pointer-shadow-2: #ff6933,
+    map-pointer-shadow-3: #ff0000,
 );
 
 // get colors from the colors var

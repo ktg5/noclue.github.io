@@ -1,0 +1,209 @@
+@use "./base/index.scss" as *;
+
+
+.page {
+    &[selected] {
+        .info_page-container {
+            .info_page {
+                .info_page-content {
+                    .info_page-list-container {
+                        .info_page-list {
+                            .info_page-item {
+                                &[scroll] {
+                                    .detail-part {
+                                        animation: txt-scroll var(--scroll-ms) linear infinite;
+                                        animation-delay: 1s;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .info_page-container {
+        background: #1e2528;
+        position: relative;
+        height: 100%;
+
+        .info_page-banner {
+            position: absolute;
+            width: 100%;
+            height: 8em;
+
+            .banner-part {
+                &[part="0"] {
+                    $clip: polygon(0 0, 100% 0, 100% 100%);
+                    background: rgba(39, 46, 51, 0.5);
+                    clip-path: $clip;
+                    position: absolute;
+                    right: 0;
+                    width: 125%;
+                    height: 5.5em;
+
+                    &:before {
+                        content: '';
+                        background: linear-gradient(0, #293338, #1a2023);
+                        clip-path: $clip;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 85%;
+                    }
+                }
+                
+                &[part="1"] {
+                    $clip: polygon(100% 0, 0 0, 0 100%);
+                    position: absolute;
+                    background: rgba(255 255 255 / .75);
+                    clip-path: $clip;
+                    width: 20em;
+                    height: 5.5em;
+
+                    &:before {
+                        content: '';
+                        background: #fff;
+                        clip-path: $clip;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 85%;
+                    }
+                }
+            }
+        }
+
+        .info_page {
+            position: relative;
+            background: linear-gradient(
+                180deg,
+                #131517,
+                #2a3438,
+                #131517
+            );
+            box-shadow: inset -1em 0 6em rgba(0 0 0 / .8);
+            width: 95%;
+            height: 100%;
+
+            .info_page-content {
+                position: absolute;
+                inset: 0;
+                margin: auto;
+                margin-top: 8em;
+                width: 75%;
+
+                .info_page-title {
+                    position: relative;
+
+                    * {
+                        color: #fff;
+                        font-size: 1.5em;
+                        line-height: 1em;
+                        opacity: .75;
+                    }
+
+                    .main {
+                        color: gColor(textColor-alt);
+                        font-size: 3em;
+                        line-height: 1em;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        opacity: 1;
+                    }
+
+                    .count {
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
+                        font-weight: bold;
+                        text-transform: uppercase;
+
+                        span {
+                            font-size: 1em;
+                            opacity: 1;
+                        }
+                    }
+                }
+
+                .info_page-list-container {
+                    display: flow-root;
+                    background: rgba(0 0 0 / .25);
+                    box-shadow: 0 0 .25em #777;
+                    margin-top: .5em;
+                    height: 100%;
+
+                    .info_page-list {
+                        display: grid;
+                        grid-template-columns: repeat(var(--info_page-itemcount), minmax(0, 1fr));
+
+                        .info_page-item {
+                            background: #222;
+                            position: relative;
+                            box-shadow:
+                                inset 0 0 .25em .25em #000,
+                                0 0 .25em #555;
+                            margin: gPxs(info_page-item-margin);
+                            min-width: 0;
+                            height: calc(12em - (#{gPxs(info_page-item-margin)} * 2));
+                            overflow: hidden;
+
+                            &[href] {
+                                cursor: pointer;
+                            }
+
+                            .info_page-item-details-container {
+                                $bg: linear-gradient(
+                                    180deg,
+                                    gColor(btn2-bg-1) 0%,
+                                    gColor(btn2-bg-1) 47%,
+                                    gColor(btn2-bg-2) 53%,
+                                    gColor(btn2-bg-2) 100%
+                                );
+                                background: $bg;
+                                box-shadow: 0 .2em .5em .5em #000;
+                                position: absolute;
+                                bottom: 0;
+                                padding: .1em;
+                                padding-right: 2%;
+                                max-width: 88%;
+
+                                &:before {
+                                    $tip-width: 5%;
+                                    content: '';
+                                    background: $bg;
+                                    display: block;
+                                    position: absolute;
+                                    top: 0;
+                                    right: calc($tip-width * -1);
+                                    width: $tip-width;
+                                    height: 100%;
+                                    clip-path: polygon(0 0, 100% 100%, 0 100%);
+                                }
+
+                                .info_page-item-details {
+                                    display: flex;
+                                    overflow: hidden;
+
+                                    .detail-part {
+                                        color: #ccc;
+                                        display: flex;
+                                        flex-shrink: 0;
+                                        position: relative;
+                                        padding-right: 2em;
+                                        white-space: nowrap;
+                                        font-weight: bold;
+                                        font-style: italic;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

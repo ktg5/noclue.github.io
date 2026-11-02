@@ -72,7 +72,7 @@ type VideoEdge = {
     "lengthSeconds": number,
     "owner": User
     "previewThumbnailURL": string,
-    /** Formated as YYYY-MM-DDTHH:SS:??? */
+    /** Formated as `YYYY`-`MM`-`DD`T`HH`:`SS`:`???` */
     "publishedAt": string,
     "self": VideoSelfEdge,
     "title": string,
@@ -99,7 +99,7 @@ type ClipEdge = {
     broadcastIdentifier: BroadcastIdOnly;
     broadcaster: User;
     thumbnailURL: string;
-    /** Formated as YYYY-MM-DDTHH:SS:??? */
+    /** Formated as `YYYY`-`MM`-`DD`T`HH`:`SS`:`???` */
     createdAt: string;
     durationSeconds: number,
     "champBadge": null,

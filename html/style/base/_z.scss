@@ -1,3 +1,11 @@
+#progress {
+    z-index: 20;
+
+    .preload {
+        z-index: 1;
+    }
+}
+
 #nav {
     z-index: 10;
 
@@ -7,15 +15,50 @@
 }
 
 
-#media_page {
-    .container {
-        .grid {
-            .content-container {
-                &:before,
-                &:after
-                {
-                    z-index: 1;
+#side {
+    z-index: 10;
+
+    .side-content {
+        .list-container {
+            .list {
+                .list-item {
+                    .list-item-content {
+                        .pfp,
+                        .text
+                        {
+                            z-index: 1;
+                        }
+                    }
                 }
+            }
+        }
+    }
+}
+
+
+#container {
+    .page {
+        z-index: -1;
+
+        &[selected] {
+            z-index: 0; 
+        }
+
+        [map-selector="map"] {
+            .point {
+                .content-container {
+                    z-index: 1;
+
+                    .pointer {
+                        z-index: 1;
+                    }
+                }
+            }
+        }
+
+        .info_page-container {
+            .info_page-banner {
+                z-index: 1;
             }
         }
     }

@@ -6,5 +6,12 @@
 
 
 @function gTransMs() {
-    @return 250ms;
+    @return 150ms;
+}
+
+
+@keyframes txt-scroll {
+    to {
+        transform: translateX(-100%);
+    }
 }

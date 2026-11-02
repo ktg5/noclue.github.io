@@ -3,14 +3,21 @@
 
 // map
 $pxs: (
-    gradientDeg: 30deg,
+    font-size: clamp(14px, 1.5vw, 1.5dvh),
+    skew: 25deg,
 
-    navHeight: 4em,
+    nav-height: clamp(64px, 7dvh, 7vw),
 
-    mediaWidth: 1200px,
-    content-peek: 52px,
-    content-item-padding: 6px,
-    content-item-size: 200px,
+    map-width: 150vw,
+    map-point-font: clamp(18px, 1.15vw, 32px),
+    map-point-content-padding: .5em,
+    map-point-content-width: 14em,
+
+    side-width: 32em,
+    side-item-pfp: 15%,
+    side-item-text-margin: .5em,
+
+    info_page-item-margin: .5em
 );
 
 // get pxs from the pxs var

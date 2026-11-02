@@ -1,0 +1,93 @@
+:root {
+    --map-width: 100vw;
+    --map-min-width: 1200px;
+    --map-max-width: 3000px;
+}
+
+
+[map-selector="viewport"] {
+    overflow: hidden;
+
+    [map-selector="map"] {
+        background: #000;
+        position: relative;
+        top: 0;
+        left: 0;
+        width: var(--map-width);
+        min-width: var(--map-min-width);
+        max-width: var(--map-max-width);
+        cursor: grab;
+
+        .map-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            pointer-events: none;
+
+            &.extra {
+                position: absolute;
+                inset: 0;
+            }
+        }
+
+        .point,
+        .point-custom
+        {
+            position: absolute;
+            margin: auto;
+            height: fit-content;
+            pointer-events: none;
+        }
+
+        .point {
+            --visualpoint-width: 24px;
+            --visualpoint-height: 24px;
+
+            width: 0;
+            height: 0;
+
+            .content-container {
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: translate(-50%, calc(-100% - (var(--visualpoint-height) + 4px)));
+
+                .pointer {
+                    content: '';
+                    background: #ddd;
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 99%;
+                    margin: auto;
+                    width: 12px;
+                    height: 12px;
+                    clip-path: polygon(50% 100%, 100% 0%, 0% 0%);
+                    overflow: hidden;
+                    pointer-events: none;
+                    cursor: unset;
+                }
+
+                .content {
+                    background: linear-gradient(#ccc, #888);
+                    color: #000;
+                    padding: 5px 12px;
+                    width: max-content;
+                    white-space: nowrap;
+                }
+            }
+
+            .visual-point {
+                background: #fff;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: var(--visualpoint-width);
+                height: var(--visualpoint-height);
+                border-radius: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+}
